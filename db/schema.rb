@@ -11,12 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109110305) do
+ActiveRecord::Schema.define(version: 20160127000550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "events", force: :cascade do |t|
+    t.string   "event_name"
+    t.string   "event_type"
+    t.string   "age_limit"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "dresscode"
+    t.string   "price"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events_genres", id: false, force: :cascade do |t|
+    t.integer "event_id", null: false
+    t.integer "genre_id", null: false
+  end
+
+  create_table "events_organizers", id: false, force: :cascade do |t|
+    t.integer "event_id",     null: false
+    t.integer "organizer_id", null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "organizers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
+    t.string   "username",               default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

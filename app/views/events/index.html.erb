@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= link_to Event, new_event_path, class:"fi-plus small" %></h1>
+
+<div class="row">
+  <section class="small-8 columns "><!--small-centered-->
+    <article class="event">
+      <div class="event-date">
+        <p class="event-month">January</p>
+        <p class="event-day">26</p>
+      </div>
+      <div class="event-desc">
+        <h4 class="event-desc-header">Day in the Life of Foundation for Apps</h4>
+        <p class="event-desc-detail"><span class="event-desc-time"></span>BDConf - Altlanta</p>
+        <a href="http://bdconf.com/speakers/brandon-arnold/" class="rsvp button">RSVP &amp; Details</a>
+      </div>
+    </article><hr>
+    <% @events.each do |event| %>
+      <article class="event">
+        <div class="event-date">
+          <p class="event-month"><%= event.start_date.try(:strftime,'%B') %></p>
+          <p class="event-day"><%= event.start_date.try(:strftime,'%e') %></p>
+        </div>
+        <div class="event-desc">
+          <h4 class="event-desc-header"><%= event.event_name %></h4>
+          <p class="event-desc-detail"><%= event.genres.map(&:name).sort.join(", ") %></p>
+          <p class="event-desc-detail"><%= event.organizers.map(&:name).sort.join(", ") %></p>
+          <small><%= link_to 'Show', event %></small>
+          <small><%= link_to 'Edit', edit_event_path(event) %></small>
+          <small><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></small>
+        </div>
+        </article><hr>
+    <% end %>
+  </section>
+  <%#<aside class="small-4 columns">
+      <div class="button-group">
+        <ul>
+        <li><%# link_to 'Add Event', new_event_path,class: "button tiny radius" </li>
+        <li><%# link_to 'Add Genre', new_genre_path,class: "button tiny radius"  </li>
+        <li><%# link_to 'Add Organizer', new_organizer_path,class: "button tiny radius"  </li>
+        </div>
+      </ul>
+    </aside>%>
+
+</div>

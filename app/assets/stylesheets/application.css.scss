@@ -13,3 +13,82 @@
  *= require_tree .
  *= require_self
  */
+
+/*Overides Start*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, img, ins, kbd, q, samp, small, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, nav, section {
+	line-height: inherit;
+	font-size: inherit;
+	text-rendering: optimizeLegibility;
+}
+ /* sticky footer */
+ * {
+ 	margin: 0;
+ }
+ html, body {
+ 	height: 100%;
+ }
+ ul{list-style-type:none}
+ .stickyFooter {
+ 	//background: #323a46;
+ }
+ #mobileFooter .centerHorizListWrapper {
+ 	text-align: center;
+ }
+ #mobileFooter .centerHorizList {
+ 	list-style:none;
+ 	margin-bottom: 0;
+ 	display:inline-block;
+ }
+ #mobileFooter .centerHorizList > li {
+ 	display:inline-block;
+ }
+ #mobileFooter .centerHorizList > li.divider {
+ 	font-weight:100;
+ }
+ #mobileFooter #footerLinks {
+ 	text-align: center;
+ }
+ #mobileFooter #footerLinks li {
+ 	line-height:1em;
+ 	padding: 0 .3em;
+ 	white-space: nowrap;
+ }
+ #mobileFooter #footerLinks li:not(.socialLink) a,
+ #mobileFooter #footerLinks li:not(.socialLink) a:visited,
+ #mobileFooter #footerLinks li:not(.socialLink) a:hover {
+ 	font-weight:lighter;
+ 	font-size:.6em;
+ 	color:#fff;
+ }
+ #mobileFooter li.socialLink a {
+ 	width:1.4em;
+ 	line-height:2em;
+ 	font-size:inherit;
+ 	text-align: center;
+ 	display:block;
+ }
+ #mobileFooter #footerMiniLinks li {
+ 	padding: 0 .6em;
+ 	font-size: .6em;
+ 	white-space: nowrap;
+ }
+ #mobileFooter #footerMiniLinks li a {
+ 	font-size: inherit;
+ }
+ #mobileFooter a,
+ #mobileFooter a:visited,
+ #mobileFooter a:hover,
+ #mobileFooter .centerHorizList li {
+ 	color:#688fa8;
+ }
+ #mobileFooter a:active {
+ 	color:#444;
+ }
+
+//E55B3C
+//D7F518
+  .top-bar {background: #E55B3C;}
+  .top-bar-section li a:not(.button) {background: #E55B3C !important;}
+  .top-bar-section li a:not(.button):hover {background: #D7F518 !important;}
+  .top-bar-section ul li.active > a {background: gray !important;}
+  .top-bar-section ul li.active > a:hover {background: yellow !important;}
