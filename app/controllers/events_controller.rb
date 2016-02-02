@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, except: [:index, :show]
-
+  #before_action :authenticate_user!, except: [:index, :show, :search]
+  # check diff bet before_action & before_filter later
   # GET /events
   # GET /events.json
   def index
@@ -69,7 +70,7 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:event_name, :event_type, :age_limit, :start_date, :end_date, :dresscode, :price, :user_id, genre_ids:[], organizer_ids:[])
+      params.require(:event).permit(:event_name, :event_type, :age_limit, :start_date, :end_date, :dresscode, :price, :user_id, band_ids:[], genre_ids:[], organizer_ids:[])
     end
 
 end

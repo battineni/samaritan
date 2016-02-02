@@ -11,14 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127000550) do
+ActiveRecord::Schema.define(version: 20160131052919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bands", force: :cascade do |t|
+    t.string   "name"
+    t.text     "bio"
+    t.string   "act"
+    t.string   "hometown"
+    t.string   "country"
+    t.date     "active_since"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "bands_events", id: false, force: :cascade do |t|
+    t.integer "band_id",  null: false
+    t.integer "event_id", null: false
+  end
+
+  add_index "bands_events", ["band_id", "event_id"], name: "index_bands_events_on_band_id_and_event_id", using: :btree
+  add_index "bands_events", ["event_id", "band_id"], name: "index_bands_events_on_event_id_and_band_id", using: :btree
+
   create_table "events", force: :cascade do |t|
+    t.integer  "venue_id"
     t.string   "event_name"
     t.string   "event_type"
+    t.string   "poster_url"
     t.string   "age_limit"
     t.datetime "start_date"
     t.datetime "end_date"
@@ -34,10 +55,14 @@ ActiveRecord::Schema.define(version: 20160127000550) do
     t.integer "genre_id", null: false
   end
 
+  add_index "events_genres", ["event_id", "genre_id"], name: "index_events_genres_on_event_id_and_genre_id", unique: true, using: :btree
+
   create_table "events_organizers", id: false, force: :cascade do |t|
     t.integer "event_id",     null: false
     t.integer "organizer_id", null: false
   end
+
+  add_index "events_organizers", ["event_id", "organizer_id"], name: "index_events_organizers_on_event_id_and_organizer_id", unique: true, using: :btree
 
   create_table "genres", force: :cascade do |t|
     t.string   "name"
@@ -85,5 +110,17 @@ ActiveRecord::Schema.define(version: 20160127000550) do
   add_index "users", ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
   add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "name"
+    t.string   "venue_type"
+    t.text     "about"
+    t.string   "location"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

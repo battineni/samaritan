@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing All</h1>
+<div class="row">
+  <div class="large-2 columns">
+        <table>
+          <thead><tr><th>Name</th></tr></thead>
+           <tbody>
+            <% @bands.each do |band| %>
+              <tr>
+                <td><%= band%></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+  </div>
+  <div class="large-2 columns">
+            <table>
+              <thead><tr><th>Name</th></tr></thead>
+               <tbody>
+                 <% @events.each do |event| %>
+                   <tr>
+                     <td><%= event %></td>
+                   </tr>
+                 <% end %>
+              </tbody>
+            </table>
+  </div>
+  <div class="large-2 columns">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                
+                    </tr>
+                  </thead>
+                   <tbody>
+                     <% @venues.each do |venue| %>
+                       <tr>
+                         <td><%= venue %></td>
+                       </tr>
+                     <% end %>
+                  </tbody>
+                </table>
+      </div>
+    </div>

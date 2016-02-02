@@ -23,6 +23,8 @@
         </div>
         <div class="event-desc">
           <h4 class="event-desc-header"><%= event.event_name %></h4>
+          <p class="event-desc-detail"><%= event.venue.name %></p>
+          <p class="event-desc-detail"><%= event.bands.map(&:name).sort.join(", ") %></p>
           <p class="event-desc-detail"><%= event.genres.map(&:name).sort.join(", ") %></p>
           <p class="event-desc-detail"><%= event.organizers.map(&:name).sort.join(", ") %></p>
           <small><%= link_to 'Show', event %></small>
@@ -32,12 +34,13 @@
         </article><hr>
     <% end %>
   </section>
-  <%#<aside class="small-4 columns">
+  <aside class="small-4 columns">
       <div class="button-group">
         <ul>
-        <li><%# link_to 'Add Event', new_event_path,class: "button tiny radius" </li>
-        <li><%# link_to 'Add Genre', new_genre_path,class: "button tiny radius"  </li>
-        <li><%# link_to 'Add Organizer', new_organizer_path,class: "button tiny radius"  </li>
+        <li><%= link_to 'Add Event', new_event_path,class: "button tiny radius" %> </li>
+        <li><%= link_to 'Add Genre', new_genre_path,class: "button tiny radius" %> </li>
+        <li><%= link_to 'Add Organizer', new_organizer_path,class: "button tiny radius" %></li>
+        <li><%= link_to 'Add Band', new_band_path,class: "button tiny radius" %></li>
         </div>
       </ul>
     </aside>%>

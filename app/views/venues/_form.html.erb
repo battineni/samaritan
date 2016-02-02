@@ -1,0 +1,19 @@
+<%= simple_form_for(@venue) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :venue_type %>
+    <%= f.input :about %>
+    <%= f.input :location %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :country, priority:[:Brazil], collection: ["Australia","Usa","Brazil","Germany","Spain"] %>
+  <%#  country_select("venue", "country", include_blank: true) %>
+<%# country_select("user", "country", { include_blank: 'Select a country' }, { class: 'country-select-box' }) %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
