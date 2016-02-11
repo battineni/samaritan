@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Samaritan" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Samaritan" %>
+    </title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Samaritan" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%# stylesheet_link_tag 'foundation-icons.css', media: 'all' %>
-    <%# Modernizr is required for Zurb Foundation %>
     <%= javascript_include_tag 'vendor/modernizr' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
+    <header class="row">
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+    <div class="row">
+      <main role="main">
+         <%= render 'layouts/messages' %>
+         <%= yield %>
+      </main>
+    </div>
     <footer class="row">
-      <%= render 'layouts/footer' %>
+      <div class="large-12 columns">
+        <%= render 'layouts/footer' %>
+      </div>
     </footer>
   </body>
 </html>

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.4'
 gem 'rails', '4.2.5'
+# Rails defaults
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -17,7 +18,7 @@ end
 gem 'devise'
 gem 'devise_invitable'
 gem 'figaro'
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 5.5'
 gem 'high_voltage'
 gem 'pg'
 gem 'puma'
@@ -47,4 +48,6 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+end
+group :production do
 end

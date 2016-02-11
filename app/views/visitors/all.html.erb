@@ -1,10 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing All</h1>
+<h1>Listing All Models</h1>
 <div class="row">
-  <div class="large-2 columns">
+  <div class="small-3 columns panel">
+                <table>
+                  <thead>
+                    <tr><th>Users</th></tr>
+                  </thead>
+                   <tbody>
+                     <% @users.each do |user| %>
+                       <tr>
+                         <td><%= user %></td>
+                       </tr>
+                     <% end %>
+                  </tbody>
+                </table>
+   </div>
+  <div class="small-3 columns panel">
         <table>
-          <thead><tr><th>Name</th></tr></thead>
+          <thead><tr><th>Bands</th></tr></thead>
            <tbody>
             <% @bands.each do |band| %>
               <tr>
@@ -14,9 +28,9 @@
           </tbody>
         </table>
   </div>
-  <div class="large-2 columns">
+  <div class="small-3 columns panel">
             <table>
-              <thead><tr><th>Name</th></tr></thead>
+              <thead><tr><th>Events</th></tr></thead>
                <tbody>
                  <% @events.each do |event| %>
                    <tr>
@@ -26,11 +40,11 @@
               </tbody>
             </table>
   </div>
-  <div class="large-2 columns">
+  <div class="small-3 columns panel">
                 <table>
                   <thead>
                     <tr>
-                      <th>Name</th>
+                      <th>Venues</th>
                 
                     </tr>
                   </thead>

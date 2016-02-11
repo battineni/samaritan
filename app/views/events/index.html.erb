@@ -1,20 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= link_to Event, new_event_path, class:"fi-plus small" %></h1>
-
+<h1>Events</h1>
+  
 <div class="row">
-  <section class="small-8 columns "><!--small-centered-->
-    <article class="event">
+  <section class="small-12 columns ">
+    <%#
+      <article class="event">
       <div class="event-date">
         <p class="event-month">January</p>
         <p class="event-day">26</p>
-      </div>
+    </div>
       <div class="event-desc">
         <h4 class="event-desc-header">Day in the Life of Foundation for Apps</h4>
         <p class="event-desc-detail"><span class="event-desc-time"></span>BDConf - Altlanta</p>
-        <a href="http://bdconf.com/speakers/brandon-arnold/" class="rsvp button">RSVP &amp; Details</a>
+        <a href="#" class="rsvp button">RSVP &amp; Details</a>
       </div>
-    </article><hr>
+    </article><hr>%>
     <% @events.each do |event| %>
       <article class="event">
         <div class="event-date">
@@ -23,7 +24,9 @@
         </div>
         <div class="event-desc">
           <h4 class="event-desc-header"><%= event.event_name %></h4>
+          <% if event.venue %>
           <p class="event-desc-detail"><%= event.venue.name %></p>
+          <% end %>
           <p class="event-desc-detail"><%= event.bands.map(&:name).sort.join(", ") %></p>
           <p class="event-desc-detail"><%= event.genres.map(&:name).sort.join(", ") %></p>
           <p class="event-desc-detail"><%= event.organizers.map(&:name).sort.join(", ") %></p>
@@ -33,16 +36,18 @@
         </div>
         </article><hr>
     <% end %>
+    <%# link_to 'Add Events', new_event_path, class:"fi-plus small" %>
   </section>
-  <aside class="small-4 columns">
+  <div class="row">
+  <aside class="small-12 columns">
       <div class="button-group">
-        <ul>
-        <li><%= link_to 'Add Event', new_event_path,class: "button tiny radius" %> </li>
-        <li><%= link_to 'Add Genre', new_genre_path,class: "button tiny radius" %> </li>
-        <li><%= link_to 'Add Organizer', new_organizer_path,class: "button tiny radius" %></li>
-        <li><%= link_to 'Add Band', new_band_path,class: "button tiny radius" %></li>
-        </div>
-      </ul>
-    </aside>%>
+        <%= link_to 'Add Event', new_event_path,class:"fi-plus small" %> | 
+        <%= link_to 'Add Genre', new_genre_path,class:"fi-plus small" %> |
+        <%= link_to 'Add Organizer', new_organizer_path,class:"fi-plus small" %> |
+        <%= link_to 'Add Band', new_band_path,class:"fi-plus small"%>
+      </div>
+      
+    </aside>
+    </div>
 
 </div>

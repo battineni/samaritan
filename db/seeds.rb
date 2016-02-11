@@ -39,9 +39,3 @@ end
 CSV.foreach(Rails.root.join("db/seed_data/genres.csv"), headers: true) do |row|
    Genre.find_or_create_by(name: row[0])
 end
-
-
-
-
-
-

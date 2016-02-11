@@ -1,4 +1,4 @@
-Samaritan
+NorthernLights/Samaritan
 ================
 
 Ruby on Rails
@@ -26,6 +26,7 @@ Contributing
 
 Credits
 -------
+sbattineni
 
 License
 -------
