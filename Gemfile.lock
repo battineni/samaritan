@@ -314,7 +314,7 @@ DEPENDENCIES
   puma
   quiet_assets
   rails (= 4.2.5)
-  rails_12factor (= 0.0.2)
+  rails_12factor
   rails_layout
   rspec-rails
   rubocop
