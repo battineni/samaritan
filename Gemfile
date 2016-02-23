@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.4'
 gem 'rails', '4.2.5'
-# Rails defaults
+# defaults
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -15,6 +15,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+# research
 gem 'devise'
 gem 'devise_invitable'
 gem 'figaro'
@@ -23,6 +24,7 @@ gem 'high_voltage'
 gem 'pg'
 gem 'puma'
 gem 'simple_form'
+gem 'country_select'
 group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.0.1'
@@ -50,4 +52,5 @@ group :test do
   gem 'selenium-webdriver'
 end
 group :production do
+  gem 'rails_12factor', '0.0.2'
 end

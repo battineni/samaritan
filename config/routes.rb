@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :organizers
   resources :genres
   resources :events
-  #root to: 'events#index'
-  root to: 'visitors#all'
+  root to: 'events#index'
+  get 'visitors/all'
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
 end

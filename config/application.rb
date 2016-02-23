@@ -34,9 +34,17 @@ module Samaritan
 
     # For Foundation 5
     config.assets.precompile += %w( vendor/modernizr )
-
-
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.action_mailer.smtp_settings = {
+        address: "smtp.gmail.com",
+        port: 587,
+        domain: ENV["GMAIL_DOMAIN"],
+        authentication: :login, #"plain",
+        enable_starttls_auto: true,
+        user_name: ENV["GMAIL_USERNAME"],
+        password: ENV["GMAIL_PASSWORD"]
+    }
+
   end
 end

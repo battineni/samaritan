@@ -15,11 +15,14 @@
     <ul class="right">
         <%= render 'layouts/nav_links_for_auth' %>
     </ul>
-
+    
     <%# Left Nav Section %>
     <ul class="left">
       <%= render 'layouts/navigation_links' %>
     </ul>
-   
+    
+    <% if user_signed_in? %>
+      <p class="right" >Hello, <%= current_user.username.capitalize %></p>
+    <% end %>  
   </div>
 </nav>

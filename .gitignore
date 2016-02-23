@@ -1,13 +1,7 @@
 #----------------------------------------------------------------------------
 # Ignore these files when commiting to a git repository.
-#
 # See http://help.github.com/ignore-files/ for more about ignoring files.
-#
 # The original version of this file is found here:
-# https://github.com/RailsApps/rails-composer/blob/master/files/gitignore.txt
-#
-# Corrections? Improvements? Create a GitHub issue:
-# http://github.com/RailsApps/rails-composer/issues
 #----------------------------------------------------------------------------
 
 # bundler state
@@ -85,3 +79,6 @@ pickle-email-*.html
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore helper_kode_html_erb use for copy paste code snippets.
+/app/views/_kode_snippet.html.erb

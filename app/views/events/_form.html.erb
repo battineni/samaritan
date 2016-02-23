@@ -5,7 +5,8 @@
     <%# Event Form Elements %>
         <div class="form-inputs">
             <%= f.input :event_name, label:'Event Name',error: 'Event name is mandatory, please specify one' %>
-            <%= f.input :event_type %>
+            <%= f.label :Event_Type %>
+            <%= f.select :event_type,["Nightclub","Festival","Special"], prompt: "Choose Event Type" %>
             <%= f.input :age_limit %>
             <%= f.label :start_date %>
            <%= date_select("event","start_date",:order => [:year, :month, :day],:start_year => 2016,
