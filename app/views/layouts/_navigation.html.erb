@@ -1,28 +1,24 @@
-<%# navigation styled for Zurb Foundation 5 %>
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
     <li class="name">
       <h1><%= link_to 'Edmbooth', root_path %></h1>
     </li>
     <li class="toggle-topbar menu-icon">
-      <%# Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone %>
       <a href="#"><span></span></a>
     </li>
   </ul>
   <div class="top-bar-section">
     
-    <%# Right Nav Section %>
-    <ul class="right">
-        <%= render 'layouts/nav_links_for_auth' %>
-    </ul>
-    
-    <%# Left Nav Section %>
-    <ul class="left">
-      <%= render 'layouts/navigation_links' %>
-    </ul>
-    
-    <% if user_signed_in? %>
-      <p class="right" >Hello, <%= current_user.username.capitalize %></p>
-    <% end %>  
+      <ul class="right">
+          <%= render 'layouts/nav_links_for_auth' %>
+      </ul>
+      
+      <ul class="left">
+        <%= render 'layouts/navigation_links' %>
+      </ul>
+      
+      <% if user_signed_in? %>
+        <p class="right" >Hello, <%= current_user.username.capitalize %></p>
+      <% end %>  
   </div>
 </nav>

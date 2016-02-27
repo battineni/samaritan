@@ -65,15 +65,6 @@ section {
 .authform form p {
   font-size: rem-calc(13);
 }
-.authform .form-group {
-  // for Bootstrap, not used for Foundation
-}
-.authform .form-control {
-  // for Bootstrap, not used for Foundation
-}
-.authform .checkbox {
-  // for Bootstrap, not used for Foundation
-}
 .authform fieldset {
   @include panel();
 }
@@ -90,3 +81,5 @@ section {
   @extend .radius;
   @extend .tiny;
 }
+
+

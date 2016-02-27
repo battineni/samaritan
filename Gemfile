@@ -15,10 +15,10 @@ group :development do
   gem 'spring'
 end
 
-
 # research
 gem 'devise'
 gem 'devise_invitable'
+gem 'jquery-ui-rails'
 gem 'figaro'
 gem 'foundation-rails', '~> 5.5'
 gem 'high_voltage'
@@ -26,6 +26,7 @@ gem 'pg'
 gem 'puma'
 gem 'simple_form'
 gem 'country_select'
+gem 'react-rails', '~> 1.6.0'
 group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.0.1'
@@ -44,7 +45,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
-  gem 'rubocop'
+  #gem 'rubocop'
 end
 group :test do
   gem 'capybara'

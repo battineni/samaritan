@@ -93,4 +93,8 @@ Rails.application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"]
 }
+
+  #react rails
+  config.react.variant = :production
+  config.react.addons = true # defaults to false
 end

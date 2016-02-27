@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/datepicker
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components
 //= require foundation
 //= require_tree .
 $(function() {
